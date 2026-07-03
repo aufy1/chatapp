@@ -1,0 +1,11 @@
+services:
+  chat-app:
+    build: .
+    image: python-p2p-chat:latest
+    #interactive
+    stdin_open: true # flag -i
+    tty: true        # flag -t
+    #no bridge mode
+    network_mode: "host"
+    environment:
+      - PYTHONUNBUFFERED=1 # dont use buffering for stdout and stderr
