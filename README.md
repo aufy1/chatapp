@@ -30,19 +30,19 @@
 
 Najpierw zbuduj obraz Docker za pomocą Docker Compose:
 ```bash
-docker-compose build
+docker compose build
 ```
 
 **Osoba 1 (Host):**
 Aby uruchomić czat jako host nasłuchujący na porcie `5555`:
 ```bash
-docker-compose run --rm chat-app --name Szymek --listen 5555
+docker compose run --rm chat-app --name Szymek --listen 5555
 ```
 
 **Osoba 2 (Gość):**
 Aby uruchomić czat jako gość łączący się z hostem o adresie `adres Osoby 1:5555`:
 ```bash
-docker-compose run --rm chat-app --name Andrzej --connect adresos1:5555
+docker compose run --rm chat-app --name Andrzej --connect adresos1:5555
 ```
 
 Flaga `--rm` powoduje automatyczne usunięcie kontenera po zakończeniu czatu.
